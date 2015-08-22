@@ -1,30 +1,19 @@
-import pygame
-import pygame.camera
+import os
+import cam_mngr
+import file_mngr
 
-pygame.init()
-pygame.camera.init()
 
-camlst = dict(enumerate(pygame.camera.list_cameras()))
 
-pickcam = input("Would you like a list connected cameras? \n please type:|Yes or press Enter| ")
+def wlcome():
+    print("Welcome to CatalogCam!")
+    if not os.path.exists("Catalog"):
+        os.makedirs("Catalog")
+    wlcnput = input("Type new to create category/item folder or press Enter for Catalog \n Please type |New or Enter|: ")
+    if wlcnput.lower() == "new":
+        file_mngr.createfl(flname = input("Please type the name of your category or item specific folder: "))
+    else:
+        print(os.listdir("Catalog"))
 
-def user_camsnap():
-    print(camlst)
-    usercam = int(input("Please enter the id/number of the camera you would like to use: "))
-    cam = pygame.camera.Camera(camlst[usercam], (352,288))
-    cam.start()
-    image= cam.get_image()
-    pygame.image.save(image,'images/101.jpg')
-    cam.stop()
 
-def default_camsnap():
-    cam = pygame.camera.Camera(camlst[0], (352,288))
-    cam.start()
-    image= cam.get_image()
-    pygame.image.save(image,'images/101.jpg')
-    cam.stop()
 
-if pickcam.lower() == ("yes"):
-    user_camsnap()
-else:
-    default_camsnap()
+wlcome()
