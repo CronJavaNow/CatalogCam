@@ -1,3 +1,4 @@
+import random
 import pygame
 import pygame.camera
 
@@ -20,13 +21,19 @@ def user_camsnap(i):
     cam.start()
     image= cam.get_image()
     #still needs some work!
-    pygame.image.save(image,'Catalog/{}/101.jpg'.format(i))
+    pygame.image.save(image, "Catalog/{}/101.jpg".format(i))
     cam.stop()
 
 def default_camsnap(i):
     cam = pygame.camera.Camera(camlst[0], (352,288))
     cam.start()
-    image= cam.get_image()
-    #still need some work
-    pygame.image.save(image,'Catalog/{}/101.jpg'.format(i))
+    image = cam.get_image()
+    pygame.image.save(image, "Catalog/{}/{}_{}.jpg".format(i, i, random.sample(range(99, 9999), 1)))
     cam.stop()
+    print("Snap Complete!")
+    val = input("would you like to take more?: \n Please type yes or press Enter to exit ")
+    if val.lower() == "yes":
+        default_camsnap(i)
+    else:
+        import main
+        main.user_welcome()
