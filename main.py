@@ -10,9 +10,9 @@ def user_welcome():
         #create Catalog
         os.makedirs("Catalog")
     #issue msg with input(1) to user
-    wlcnput = input("Type new to create category/item folder or press Enter for Catalog \n Please type |New or Enter|: ")
+    welcnput = input("Type new to create category/item folder or press Enter for Catalog \n Please type |New or Enter|: ")
     #look for user input(1)
-    if wlcnput.lower() == "new":
+    if welcnput.lower() == "new":
         #if user input(1) = new | request file_mngr.createfl | take user input(2) to file_mngr
         file_mngr.createfl(i = input("Please type the name of your category or item specific folder: "))
     else:
@@ -21,6 +21,6 @@ def user_welcome():
         #issue msg to user~> list file directories with enumerate keys i.e 0,1,2,3
         print(catalogdir)
         #issue input(3) and allow user to pick a directory {STILL NEEDS WORK}
-        cam_mngr.catalog_directory(i = catalogdir[int(input("Please enter the id/number of the directory you would like to use: "))])
+        cam_mngr.ask_user(i = catalogdir[int(input("Please enter the id/number of the directory you would like to use: "))])
 
 user_welcome()
