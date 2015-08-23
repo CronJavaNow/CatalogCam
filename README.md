@@ -2,4 +2,7 @@
 
 **CatalogCam will take pictures and catalog them with very little user configuration required.**
 
-
+### Supported Operating Systems:
+  - iOS
+  - Linux
+  - Windows
