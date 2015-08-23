@@ -1,9 +1,9 @@
 import os
 
-def createfl(flname):
-   if not os.path.exists("Catalog/{}".format(flname)):
-       os.makedirs("Catalog/{}".format(flname))
+def createfl(i):
+   if not os.path.exists("Catalog/{}".format(i)):
+       os.makedirs("Catalog/{}".format(i))
    else:
-       print("Seems file {} already exists!".format(flname))
+       print("Seems file {} already exists!".format(i))
        createfl(flname = input("Please type the name of your category or item specific folder: "))
 
