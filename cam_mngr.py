@@ -8,7 +8,8 @@ pygame.camera.init()
 camlst = dict(enumerate(pygame.camera.list_cameras()))
 
 def ask_user(i):
-    pickcam = input("Would you like a list of connected cameras? \n please type:|Yes or press Enter| ")
+    pickcam = input("Would you like a list of connected cameras? \n "
+                    "Enter will auto-snap with default camera! \n please type:|Yes or press Enter| ")
     if pickcam.lower() == "yes":
         user_camsnap(i=i)
     else:
@@ -16,13 +17,19 @@ def ask_user(i):
 
 def user_camsnap(i):
     print(camlst)
-    usercam = int(input("Please enter the id/number of the camera you would like to use: "))
-    cam = pygame.camera.Camera(camlst[usercam], (352,288))
+    usrcam = int(input("Please enter the id/number of the camera you would like to use: "))
+    cam = pygame.camera.Camera(camlst[usrcam], (352,288))
     cam.start()
-    image= cam.get_image()
-    #still needs some work!
-    pygame.image.save(image, "Catalog/{}/101.jpg".format(i))
+    image = cam.get_image()
+    pygame.image.save(image, "Catalog/{}/{}_{}.jpg".format(i, i, random.sample(range(99, 9999), 1)))
     cam.stop()
+    print("Snap Complete!")
+    val = input("would you like to take more pictures?: \n Please type yes or press Enter to exit: ")
+    if val.lower() == "yes":
+        user_default_cansnap(i=i, x=usrcam)
+    else:
+        import main
+        main.user_welcome()
 
 def default_camsnap(i):
     cam = pygame.camera.Camera(camlst[0], (352,288))
@@ -31,9 +38,23 @@ def default_camsnap(i):
     pygame.image.save(image, "Catalog/{}/{}_{}.jpg".format(i, i, random.sample(range(99, 9999), 1)))
     cam.stop()
     print("Snap Complete!")
-    val = input("would you like to take more?: \n Please type yes or press Enter to exit ")
+    val = input("would you like to take more pictures?: \n Please type yes or press Enter to exit: ")
     if val.lower() == "yes":
         default_camsnap(i)
+    else:
+        import main
+        main.user_welcome()
+
+def user_default_cansnap(i, x):
+    cam = pygame.camera.Camera(camlst[x], (352, 288))
+    cam.start()
+    image = cam.get_image()
+    pygame.image.save(image, "Catalog/{}/{}_{}.jpg".format(i, i, random.sample(range(99, 9999), 1)))
+    cam.stop()
+    print("snap complete")
+    val = input("would you like to take more pictures?: \n Please type yes or press Enter to exit: ")
+    if val.lower() == "yes":
+        user_default_cansnap(i, x)
     else:
         import main
         main.user_welcome()

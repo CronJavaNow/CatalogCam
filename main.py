@@ -5,7 +5,9 @@ import file_mngr
 def start():
     if not os.path.exists("Catalog"):
         os.makedirs("Catalog")
-    user_welcome()
+        user_welcome()
+    else:
+        user_welcome()
 
 def user_welcome():
     print("Welcome to CatalogCam!")
