@@ -5,5 +5,5 @@ def createfl(i):
        os.makedirs("Catalog/{}".format(i))
    else:
        print("Seems file {} already exists!".format(i))
-       createfl(flname = input("Please type the name of your category or item specific folder: "))
+       createfl(i = input("Please type the name of your category or item specific folder: "))
 

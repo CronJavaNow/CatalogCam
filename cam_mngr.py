@@ -8,6 +8,7 @@ camlst = dict(enumerate(pygame.camera.list_cameras()))
 
 def catalog_directory(i):
     ask_user()
+    sd = "d"
     return  i
 
 def ask_user():
@@ -24,7 +25,7 @@ def user_camsnap():
     cam.start()
     image= cam.get_image()
     #still needs some work!
-    pygame.image.save(image,'Catalog/{}/101.jpg'.format(catalog_directory()))
+    pygame.image.save(image,'Catalog/{}/101.jpg'.format())
     cam.stop()
 
 def default_camsnap():
