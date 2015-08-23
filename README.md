@@ -12,6 +12,7 @@
   - Place the CatalogCam folder somewhere convenient.
   - Open terminal or cmd in the CatalogCam folder.
   - Type: python main.py
+  - CatalogCam will create the Catalog directory if your don't have it.
   - CatalogCam will ask to create new category/item file or list current catalog files.
   - Once CatalogCam enters your category/item file it will ask about your cameras.
   - You can list connected cameras and pick one or use the default "if you only have 1"
