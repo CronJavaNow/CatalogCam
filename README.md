@@ -1,4 +1,4 @@
-# <img src="images/CatalogCamIcon.png" alt="Smiley face" width="100" height="100" align="bottom"> CatalogCam - Beta 0.5
+# <img src="images/CatalogCamIcon.png" alt="icon" width="100" height="100" align="bottom"> CatalogCam - Beta 0.5
 
 ##### **CatalogCam will take pictures and catalog them with very little user configuration required.**
 
@@ -21,4 +21,5 @@
 ##### Troubleshooting Linux:
   - If python main.py is not working try python3 main.py
   
-  
+##### License:
+  - **<img src="images/GNU.png" alt="GNU" width="100" height="100" align="bottom"> GNU GENERAL PUBLIC LICENSE
