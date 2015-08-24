@@ -22,4 +22,4 @@
   - If python main.py is not working try python3 main.py
   
 ##### License:
-  - **<img src="images/GNU.png" alt="GNU" width="100" height="100" align="bottom"> GNU GENERAL PUBLIC LICENSE
+  - <img src="images/GNU.png" alt="GNU" width="50" height="50" align="bottom"> **GNU GENERAL PUBLIC LICENSE
